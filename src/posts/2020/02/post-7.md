@@ -6,7 +6,7 @@ author: Your name goes here
 date: 2020-02-28T21:30:00 # This would be 9:30 PM (2130) UTC on February 28, 2020
 lastmod: 2020-04-02T12:23:00 # Comment-out this line with a # if content is unchanged
 draft: false # Make it "true" if you don't want Hugo to "publish" yet
-featured_image: globe-life-park-rangers-1402096_1280x853.jpg # Or whatever image you want to use
+featured_image: globe-life-park-rangers-1402096_6000x4000.jpg # Or whatever image you want to use
 featured_image_alt: "Baseball game at Globe Life Park, Arlington, Texas" # Always include an ALT tag for accessibility --  Quotation marks allow colons, semicolons, etc.
 featured_image_caption: "Image: rwelborn; Pixabay" # Quotation marks allow colons, semicolons, etc.
 ---

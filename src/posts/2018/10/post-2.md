@@ -7,7 +7,7 @@ description: "The UNIQUE description for Post 2." # Quotation marks allow colons
 author: Your name goes here
 date: 2018-10-25T07:40:00 # This would be 7:40 (0740) AM UTC on Oct. 25, 2018
 lastmod: 2020-06-13T13:10:00 # Comment-out this line with a # if content is unchanged
-featured_image: computer-1869236_1920x1440.jpg # Or whatever image you want to use
+featured_image: computer-1869236_3264x2448.jpg # Or whatever image you want to use
 featured_image_alt: Backlit computer keyboard # Always include an ALT tag for accessibility
 featured_image_caption: "Image: Pixabay" # Quotation marks allow colons, semicolons, etc.
 ---
