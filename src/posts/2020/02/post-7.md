@@ -3,7 +3,6 @@ layout: layouts/posts/singlepostherofit.11ty.js
 tags: post
 description: "The UNIQUE description for Post 7." # Quotation marks allow colons, semicolons, etc.
 author: Your name goes here
-author: Bryce Wray
 date: 2020-02-28T21:30:00 # This would be 9:30 PM (2130) UTC on February 28, 2020
 lastmod: 2020-04-02T12:23:00 # Comment-out this line with a # if content is unchanged
 draft: false # Make it "true" if you don't want Hugo to "publish" yet
