@@ -1,0 +1,9 @@
+{
+  "title": "Your site title",
+  "url": "https://example.com",
+  "domain": "example.com",
+  "description": "Your site description.",
+  "author": {
+    "name": "Your name"
+  }
+}
