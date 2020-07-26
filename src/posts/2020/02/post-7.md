@@ -1,6 +1,8 @@
 ---
 layout: layouts/posts/singlepostherofit.11ty.js
 tags: post
+title: "Post 7 with its UNIQUE title"
+subtitle: "The UNIQUE Post 7 subtitle"
 description: "The UNIQUE description for Post 7." # Quotation marks allow colons, semicolons, etc.
 author: Your name goes here
 date: 2020-02-28T21:30:00 # This would be 9:30 PM (2130) UTC on February 28, 2020
