@@ -22,7 +22,7 @@ exports.render = function (data) {
       <div class="col-span-2 border-black border-t lg:border-0 pt-4 lg:pt-0">
         <h2 class="h1 mb-4">Recent <a href="/posts/">posts</a></h2>
         ${
-          data.collections.post.slice(0, 5).map(post =>
+          data.collections.post.reverse().slice(0, 5).map(post =>
           `
         <div>
           <h2 class="h4 not-italic tracking-tight"><a href="${post.url}">${post.data.title}</a></h2>
