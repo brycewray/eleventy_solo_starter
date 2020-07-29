@@ -15,5 +15,5 @@ This is a starter set for the [Eleventy](https://11ty.dev) [static site generato
 ## What’s under the hood
 
 - Lazy-loading of some images through use of [lazyload](https://github.com/verlok/vanilla-lazyload).
-- Responsive images through my run-time `imgxfm.js` script and the `lazypicture` shortcode.
+- Responsive images through my run-time `imgxfm.js` script and the `lazypicture` shortcode. (The **real** site repo now uses [Cloudinary](https://cloudinary.com) rather than the run-time script.)
 - [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com).
