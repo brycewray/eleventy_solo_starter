@@ -17,5 +17,3 @@ This is a starter set for the [Eleventy](https://11ty.dev) [static site generato
 - Lazy-loading of some images through use of [lazyload](https://github.com/verlok/vanilla-lazyload).
 - Responsive images through my run-time `imgxfm.js` script and the `lazypicture` shortcode.
 - [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com).
-
-**Note**: If you don’t care for dealing with [npm](https://npmjs.org) plugins and dependencies, you may be interested in another repo, [hugo_solo](https://github.com/brycewray/hugo_solo), which uses the [Hugo](https://gohugo.io) SSG and offers similar lazy-loading and image processing **but** uses [SCSS](https://sass-lang.com/) [through Hugo Pipes](https://gohugo.io/hugo-pipes/scss-sass/) instead of Tailwind CSS and PostCSS.
