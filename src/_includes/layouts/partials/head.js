@@ -22,25 +22,20 @@ module.exports = function(eleventyConfig) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    ${
-      (data.title == "Home page")
-      ? `
-      <meta name="description" content="${data.siteparams.siteDescription}" />
-      <meta property="og:description" content="${data.siteparams.siteDescription}" />
-      `
-      : (data.description != "")
-        ? `
-      <meta name="description" content="${data.description}">
-        `
-      : ``
-    }
-    ${
-      (data.page.url !== null)
-      ? `
-      <meta property="og:url" content="${data.siteparams.siteURLforOG}${data.page.url}" />
-      `
-      : `<meta property="og:url" content="${data.siteparams.siteURLforOG}" />`
-    }
+    <meta name="description" content="${data.description
+      ? `${data.description}`
+      : `${data.siteparams.siteDescription}`
+    }" />
+
+    <meta name="og:description" content="${data.description
+      ? `${data.description}`
+      : `${data.siteparams.siteDescription}`
+    }" />
+
+    <meta property="og:url" content="${data.page.url
+      ? `${data.page.url}`
+      : `${data.siteparams.siteURLforOG}`
+    }" />
 
     <!-- Favicon stuff goes here -->
 
