@@ -37,7 +37,7 @@ module.exports = function(eleventyConfig) {
       : `${data.siteparams.siteURLforOG}`
     }" />
 
-    <!-- Favicon stuff goes here -->
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon.png">
 
     <link rel="preload" as="style" href="/css/index.css" />
     <link rel="stylesheet" href="/css/index.css" type="text/css" />
