@@ -2,6 +2,8 @@
 
 This is a starter set for the [Eleventy](https://11ty.dev) [static site generator (SSG)](https://staticgen.com), based on my website at [brycewray.com](https://brycewray.com). Please note that this serves just as an example; my **real** site repo is [eleventy_solo](https://github.com/brycewray/eleventy_solo).
 
+See the [online demo](https://eleventy-solo-starter.netlify.app/).
+
 ## How to use
 
 1. Clone this to a local repo.
