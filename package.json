@@ -29,15 +29,15 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
     "@babel/register": "^7.10.5",
     "@svrx/cli": "^1.1.2",
-    "autoprefixer": "^9.8.5",
+    "autoprefixer": "^9.8.6",
     "babel-core": "^6.26.3",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.26.10",
+    "browser-sync": "^2.26.12",
     "cssnano": "^4.1.10",
     "debug": "^4.1.1",
     "del": "^5.1.0",
@@ -46,14 +46,14 @@
     "glob": "^7.1.6",
     "glob-all": "^3.2.1",
     "inline-source-map": "^0.6.2",
-    "lodash": "^4.17.19",
-    "luxon": "^1.24.1",
+    "lodash": "^4.17.20",
+    "luxon": "^1.25.0",
     "markdown-it": "^10.0.0",
     "markdown-it-attrs": "^3.0.3",
     "markdown-it-bracketed-spans": "^1.0.1",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-link-attributes": "^3.0.0",
-    "markdown-it-prism": "^2.1.0",
+    "markdown-it-prism": "^2.1.1",
     "node-fetch": "^2.6.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.32",
@@ -62,9 +62,9 @@
     "postcss-nesting": "^7.0.1",
     "postcss-partial-import": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
-    "posthtml": "^0.13.1",
-    "prismjs": "^1.20.0",
-    "sanitize-html": "^1.27.1",
+    "posthtml": "^0.13.3",
+    "prismjs": "^1.21.0",
+    "sanitize-html": "^1.27.4",
     "sharp": "^0.25.4"
   },
   "dependencies": {
@@ -78,6 +78,6 @@
     "node-dir": "^0.1.17",
     "postcss-clean": "^1.1.0",
     "postcss-import": "^12.0.1",
-    "tailwindcss": "^1.5.1"
+    "tailwindcss": "^1.7.5"
   }
 }
