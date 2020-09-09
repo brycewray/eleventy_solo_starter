@@ -1,6 +1,6 @@
 # Eleventy starter set
 
-This is a starter set for the [Eleventy](https://11ty.dev) [static site generator (SSG)](https://staticgen.com), based on my website at [brycewray.com](https://brycewray.com). Please note that this serves just as an example; my **real** site repo is [eleventy_solo](https://github.com/brycewray/eleventy_solo).
+This is a starter set for the [Eleventy](https://11ty.dev) [static site generator (SSG)](https://staticgen.com), based on my website at [brycewray.com](https://brycewray.com).
 
 See the [online demo](https://eleventy-solo-starter.netlify.app/).
 
