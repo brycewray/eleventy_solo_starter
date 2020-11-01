@@ -1,7 +1,0 @@
-# Netlify instructions to control build
-
-[build]
-  command = "npm run build"
-
-[context.production.environment]
-  TZ = "America/Chicago"
