@@ -1,0 +1,44 @@
+{
+  "build": {},
+  "github": {
+    "silent": true
+  },
+  "headers": [
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2678400"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2678400"
+        }
+      ]
+    },
+    {
+      "source": "/images/icons/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2678400"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2678400"
+        }
+      ]
+    }
+  ]
+}
