@@ -10,7 +10,7 @@ exports.render = function (data) {
 <main class="pt-12">
   <div class="background-hero-image-div">
     ${stringtoRet(data.featured_image, data.featured_image_alt, "posts")}
-    <div class="background-hero-title-block-fit">
+    <div class="background-hero-title-block-fit font-sans">
       <div class="background-hero-title-text">
       <h1 class="text-center text-4xl md:text-left md:text-5xl lg:text-6xl xb:text-8xl tracking-tight leading-tight mb-6 px-4 md:px-0 text-white">${data.title}</h1>
       <h2 class="italic text-center text-2xl md:text-left md:text-3xl lg:text-5xl xb:text-6xl leading-tight tracking-tight px-6 md:px-0 text-white">
@@ -31,7 +31,7 @@ exports.render = function (data) {
           }
           </span>
         </p>
-        <p class="text-center text-white text-xs mt-4 mb-0 md:mb-1 pb-1">
+        <p class="font-sans text-center text-white text-xs mt-4 mb-0 md:mb-1 pb-1">
         ${data.featured_image_caption
           ? `${data.featured_image_caption}`
           : `&nbsp;`
@@ -48,7 +48,7 @@ exports.render = function (data) {
   </div>
   
   ${data.title != "The About Me page"
-    ? `<div class="w-full px-8 md:px-0 bg-blue-700 align-middle mt-10 mb-10">
+    ? `<div class="font-sans w-full px-8 md:px-0 bg-blue-700 align-middle mt-10 mb-10">
     <h3 class="text-center text-3xl tracking-normal mb-0 pt-2"><a href="/posts" class="border-transparent text-blue-100 hover:text-white italic">Other posts</a></h3>
     ${data.nextPost && data.nextPost.url !== null
       ? `<p class="text-center mt-2 mb-2 text-xl text-white leading-tight tracking-tight">

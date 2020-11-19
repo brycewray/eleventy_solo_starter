@@ -3,10 +3,10 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
 */
 
 .nav__item {
-  @apply p-0 m-0;
+  @apply font-sans p-0 m-0;
 
   & a {
-    @apply block py-2 px-6 m-0 text-white no-underline transition-opacity duration-500 ease-linear;
+    @apply block py-1 px-4 mb-1 text-white no-underline transition-opacity duration-500 ease-linear;
 
     &:link, &:visited {
       @apply text-white;
@@ -20,7 +20,9 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
 
 @media (min-width: 900px) {
   .nav__item {
-    @apply text-lg inline-block;
+    @apply font-bold lowercase text-xs inline-block;
+    font-variant: small-caps;
+    letter-spacing: 0.15rem;
     & a {
       @apply inline-block pt-1 pb-0 no-underline
     }
@@ -149,10 +151,9 @@ nav {
 }
 
 .site-logo-holder {
-  & img {
-    height: 18px;
-    width: 18px;
-    @apply mb-1;
+  @apply mt-1 pt-1 w-full;
+  & a {
+    @apply no-underline border-b-0;
   }
 }
 /* === End of primary settings for larger screens === */

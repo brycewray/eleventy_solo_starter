@@ -7,12 +7,12 @@ exports.data = {
 exports.render = function (data) {
   return `
   <main>
-    <div class="w-full height-hero pt-12">
+    <div class="w-full height-hero">
       ${stringtoRet(data.featured_image, data.featured_image_alt, "index")}
     </div>
     ${
       (data.featured_image_caption)
-      ? `<p class="text-center text-xs tracking-normal mt-1">${data.featured_image_caption}</p>`
+      ? `<p class="text-center font-sans text-xs tracking-normal mt-1">${data.featured_image_caption}</p>`
       : ``
     }
     <div class="container px-8 lg:grid lg:grid-cols-5 lg:gap-16 xb:gap-32 lg:w-3/4 xb:w-7/12 mr-auto ml-auto">
@@ -24,7 +24,7 @@ exports.render = function (data) {
         ${
           data.collections.post.reverse().slice(0, 5).map(post =>
           `
-        <div>
+        <div class="font-sans">
           <h2 class="h4 not-italic tracking-tight"><a href="${post.url}">${post.data.title}</a></h2>
           <p class="font-bold text-base mt-2 mb-0 leading-5">${post.data.subtitle}</p>
           <p class="text-xs tracking-normal mt-0 mb-1">
@@ -44,7 +44,7 @@ exports.render = function (data) {
           ` 
         ).join('')}
 
-        <p><a href="/posts/"><strong>All ${data.collections.post.length} posts</strong></a> <span class="text-sm"><em>(listed five per page)</em></span></p>
+        <p class="font-sans"><a href="/posts/"><strong>All ${data.collections.post.length} posts</strong></a> <span class="text-sm"><em>(listed five per page)</em></span></p>
       </div>
     </div>
   </main>

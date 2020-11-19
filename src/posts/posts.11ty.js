@@ -34,7 +34,7 @@ exports.render = function (data) {
 	<div class="px-10 w-full md:w-2/3 lg:w-1/2 mx-auto">
 		<h1 class="text-center tracking-tight">Posts</h1>
     <div class="post-line"></div>
-    <div>
+    <div class="font-sans">
       ${pagerThing}
       <hr class="mt-2 mb-6" />
       ${
