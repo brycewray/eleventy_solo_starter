@@ -39,8 +39,8 @@ module.exports = function(eleventyConfig) {
 
     <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon.png">
 
-    <link rel="preload" as="style" href="/css/${data.manifest['index.css']}" />
-    <link rel="stylesheet" href="/css/${data.manifest['index.css']}" type="text/css" />
+    <link rel="preload" as="style" href="/css/${data.csshash['index.css']}" />
+    <link rel="stylesheet" href="/css/${data.csshash['index.css']}" type="text/css" />
     <style>@-moz-document url-prefix() {.lazy:-moz-loading {visibility:hidden;}}.ieOnly {display: none;}@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {.ieOnly {display: block;}.notInIE{display: none;}}</style>
 
     <noscript>

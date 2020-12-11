@@ -6,19 +6,20 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf _site",
-    "start": "npm-run-all clean imgs --parallel dev:*",
+    "hasher": "node cssdate.js",
+    "start": "npm-run-all clean hasher imgs --parallel dev:*",
     "imgs": "node imgxfm.js",
-    "dev:postcss": "postcss src/assets/css/index.css -d _site/css/ --config ./postcss.config.js -w",
+    "dev:postcss": "postcss src/assets/css/index.css -o _site/css/$(cat csshash) --config ./postcss.config.js -w",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --watch --quiet",
     "dev:svrx": "svrx",
-    "build": "NODE_ENV=production npm-run-all clean imgs --parallel prod:*",
-    "prod:postcss": "postcss src/assets/css/index.css -d _site/css/ --config ./postcss.config.js",
+    "build": "NODE_ENV=production npm-run-all clean hasher imgs --parallel prod:*",
+    "prod:postcss": "postcss src/assets/css/index.css -o _site/css/$(cat csshash) --config ./postcss.config.js",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
-    "testProd:postcss": "postcss src/assets/css/index.css -d _site/css/ --config ./postcss.config.js -w",
+    "testProd:postcss": "postcss src/assets/css/index.css -o _site/css/$(cat csshash) --config ./postcss.config.js -w",
     "testProd:svrx": "svrx",
     "testProd:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site --watch",
     "setProd": "NODE_ENV=production",
-    "testbuild": "NODE_ENV=production npm-run-all clean imgs --parallel testProd:*"
+    "testbuild": "NODE_ENV=production npm-run-all clean hasher imgs --parallel testProd:*"
   },
   "keywords": [],
   "author": "",
@@ -59,7 +60,6 @@
     "postcss": "^8.1.8",
     "postcss-cli": "^8.3.0",
     "postcss-css-variables": "^0.17.0",
-    "postcss-hash": "^2.0.0",
     "postcss-import": "^13.0.0",
     "postcss-nesting": "^7.0.1",
     "postcss-partial-import": "^4.1.0",
@@ -78,6 +78,7 @@
     "imagemin-pngquant": "^9.0.1",
     "jsonfile": "^6.1.0",
     "junk": "^3.1.0",
+    "md5": "^2.3.0",
     "node-dir": "^0.1.17",
     "postcss-clean": "^1.1.0"
   }
