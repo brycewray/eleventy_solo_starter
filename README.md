@@ -21,4 +21,4 @@ See the [online demo](https://eleventy-solo-starter.netlify.app/).
 - Lazy-loading of some images through use of [lazyload](https://github.com/verlok/vanilla-lazyload).
 - Responsive images through my run-time `imgxfm.js` script and `lazypicture` shortcode.
 - [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com).
-- CSS cache-busting through my run-time `cssdate.js` script and appropriate scripting in the PostCSS-related parts of `package.json`.
+- CSS cache-busting through my run-time `cssdate.js` script, and appropriate handling in the `head.js` partial template and the PostCSS-related parts of `package.json`.
