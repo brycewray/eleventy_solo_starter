@@ -1,0 +1,23 @@
+[build]
+  publish = "_site"
+  command = "npm run build"
+
+[build.environment]
+  TZ = "America/Chicago"
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = false
+  minify = false
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
