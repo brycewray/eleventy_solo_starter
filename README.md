@@ -6,6 +6,8 @@ See the [online demo](https://eleventy-solo-starter.netlify.app/).
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/830a2888-915d-4018-a21a-4d213dad79da/deploy-status)](https://app.netlify.com/sites/eleventy-solo-starter/deploys)
 
+*This starter set uses JavaScript templating (.11ty.js). For a version that uses Nunjucks templating, see the [eleventy_solo_starter_njk repo](https://github.com/brycewray/eleventy_solo_starter_njk).*
+
 ## How to use
 
 1. Clone this to a local repo.
