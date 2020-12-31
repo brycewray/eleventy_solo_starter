@@ -41,7 +41,6 @@ module.exports = function(eleventyConfig) {
 
     <link rel="preload" as="style" href="/css/${data.csshash['index.css']}" />
     <link rel="stylesheet" href="/css/${data.csshash['index.css']}" type="text/css" />
-    <style>@-moz-document url-prefix() {.lazy:-moz-loading {visibility:hidden;}}.ieOnly {display: none;}@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {.ieOnly {display: block;}.notInIE{display: none;}}</style>
 
     <noscript>
       <!-- Dark mode for Twitter items if browser blocks JS at bottom; it’s debatable whether it’s needed since non-JS Twitter is pretty spare and mostly adheres to other CSS, but we’ll do it just to be consistent -->
