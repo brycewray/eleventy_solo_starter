@@ -24,6 +24,7 @@ Text here.
 
 Maybe you want a code block to illustrate something. Here's one:
 
+{% raw %}
 ```js
 
 /* =========
@@ -56,5 +57,6 @@ When run, the above would output:
 ========= */
 
 ```
+{% endraw %}
 
 Closing text. That ends Post 4!
