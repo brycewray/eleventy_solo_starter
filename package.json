@@ -1,6 +1,5 @@
 {
-  "name": "eleventy_solo",
-  "version": "1.0.0",
+  "name": "eleventy_solo_starter",
   "description": "",
   "private": true,
   "main": "index.js",
