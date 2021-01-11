@@ -17,6 +17,15 @@ exports.render = function (data) {
     }
     <div class="container px-8 lg:grid lg:grid-cols-5 lg:gap-16 xb:gap-32 lg:w-3/4 xb:w-7/12 mr-auto ml-auto">
       <div class="col-span-3 home-colOne">
+        <h1>Welcome.</h1>
+        <p class="font-sans text-xs tracking-normal mt-1 mb-0 dateInfo" style="line-height: 1.5 !important;">
+        Published: ${this.pub_lastmod(data.page.date)}
+        ${
+          data.lastmod !== null && data.lastmod !== undefined
+          ? `<br />Last modified: ${this.pub_lastmod(data.lastmod)}`
+          : `&nbsp;`
+        }
+      </p>
         ${data.content}
       </div>
       <div class="col-span-2 border-black border-t lg:border-0 pt-4 lg:pt-0">
@@ -28,11 +37,11 @@ exports.render = function (data) {
           <h2 class="h4 not-italic tracking-tight"><a href="${post.url}">${post.data.title}</a></h2>
           <p class="font-bold text-base mt-2 mb-0 leading-5">${post.data.subtitle}</p>
           <p class="text-xs tracking-normal mt-0 mb-1">
-            Published: <time style="display: inline;" datetime="${this.pub_lastmod(post.date)}}">${this.pub_lastmod(post.date)}<span style="font-variant: small-caps;">&nbsp;utc</span></time>
+            Published: <time style="display: inline;" datetime="${this.pub_lastmod(post.date)}}">${this.pub_lastmod(post.date)}</time>
             ${
               post.data.lastmod
               ? `
-            <br />Last modified: <time style="display: inline;" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}<span style="font-variant: small-caps;">&nbsp;utc</span></time>
+            <br />Last modified: <time style="display: inline;" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}</time>
               `
               : ``
             }
