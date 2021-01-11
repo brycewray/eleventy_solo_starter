@@ -10,8 +10,6 @@ featured_image_alt: "Monochrome image of typing on an old typewriter"
 featured_image_caption: "Image: Pixabay"
 ---
 
-# Welcome.
-
 A few words of welcome for your visitors.
 
 This will be in the first column in a desktop layout.
