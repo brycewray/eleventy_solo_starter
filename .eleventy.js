@@ -75,6 +75,16 @@ module.exports = function (eleventyConfig) {
       rel: 'noreferrer noopener'
     }
   })
+  // START, de-bracketing footnotes
+  //--- see http://dirtystylus.com/2020/06/15/eleventy-markdown-and-footnotes/
+  markdownEngine.renderer.rules.footnote_caption = (tokens, idx) => {
+    let n = Number(tokens[idx].meta.id + 1).toString()
+    if (tokens[idx].meta.subId > 0) {
+      n += ":" + tokens[idx].meta.subId
+    }
+    return n
+  }
+  // END, de-bracketing footnotes
   eleventyConfig.setLibrary("md", markdownEngine)
 
   eleventyConfig.addWatchTarget("src/**/*.js")
