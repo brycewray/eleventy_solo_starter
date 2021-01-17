@@ -8,11 +8,11 @@ module.exports = function(eleventyConfig) {
     <meta name="generator" content="Eleventy - 11ty - https://11ty.dev - v${require(`@11ty/eleventy/package.json`).version}" />        
     ${
       (data.title == "Home page")
-      ? `
+      ? /*html*/ `
       <title>${data.siteparams.siteTitle}</title> 
       <meta property="og:title" content="${data.siteparams.siteTitle}" />
       `
-      : `
+      : /*html*/ `
       <title>${data.title} | ${data.siteparams.siteTitle}</title>
       <meta property="og:title" content="${data.title} | ${data.siteparams.siteTitle}" />
       `

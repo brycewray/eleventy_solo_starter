@@ -6,7 +6,7 @@ exports.data = {
 }
 
 exports.render = function (data) {
-  return `
+  return /*html*/ `
 <main class="pt-12">
   <div class="background-hero-image-div">
     ${stringtoRet(data.featured_image, data.featured_image_alt, "posts")}
@@ -17,7 +17,7 @@ exports.render = function (data) {
           ${
             data.subtitle
               ? data.subtitle
-              : `&nbsp;`
+              : /*html*/ `&nbsp;`
           }
         </h2>
         <p class="hidden not-italic md:block md:text-2xl xb:text-4xl tracking-tight md:mt-8 mb-6 text-white">${data.description}</p>
@@ -26,15 +26,15 @@ exports.render = function (data) {
           <span class="text-xs md:text-sm">
           ${
             data.lastmod !== null && data.lastmod !== undefined
-            ? `<span style="font-variant: small-caps;">last modified:</span>&nbsp;${this.pub_lastmod(data.lastmod)}`
-            : `&nbsp;`
+            ? /*html*/ `<span style="font-variant: small-caps;">last modified:</span>&nbsp;${this.pub_lastmod(data.lastmod)}`
+            : /*html*/ `&nbsp;`
           }
           </span>
         </p>
         <p class="font-sans text-center text-white text-xs mt-4 mb-0 md:mb-1 pb-1">
         ${data.featured_image_caption
           ? `${data.featured_image_caption}`
-          : `&nbsp;`
+          : /*html*/ `&nbsp;`
         }
         </p>
       </div>
@@ -48,21 +48,21 @@ exports.render = function (data) {
   </div>
   
   ${data.title != "The About Me page"
-    ? `<div class="font-sans w-full px-8 md:px-0 bg-blue-700 align-middle mt-10 mb-10">
+    ? /*html*/ `<div class="font-sans w-full px-8 md:px-0 bg-blue-700 align-middle mt-10 mb-10">
     <h3 class="text-center text-3xl tracking-normal mb-0 pt-2"><a href="/posts" class="border-transparent text-blue-100 hover:text-white italic">Other posts</a></h3>
     ${data.nextPost && data.nextPost.url !== null
-      ? `<p class="text-center mt-2 mb-2 text-xl text-white leading-tight tracking-tight">
+      ? /*html*/ `<p class="text-center mt-2 mb-2 text-xl text-white leading-tight tracking-tight">
         <strong>Next</strong>: 
         <a class="border-transparent text-blue-100 hover:text-white hover:border-blue-100" href="${data.nextPost.url}">${data.nextPost.data.title}</a>
       </p>`
       : ``
     }
     ${data.prevPost && data.prevPost.url !== null
-      ? `<p class="text-center pb-4 my-0 text-xl text-white leading-tight tracking-tight">
+      ? /*html*/ `<p class="text-center pb-4 my-0 text-xl text-white leading-tight tracking-tight">
         <strong>Previous</strong>: 
         <a class="border-transparent text-blue-100 hover:text-white hover:border-blue-100" href="${data.prevPost.url}">${data.prevPost.data.title}</a>
       </p>`
-      : `<p class="text-xs my-0 py-0 leading-tight">&nbsp;</p>`
+      : /*html*/ `<p class="text-xs my-0 py-0 leading-tight">&nbsp;</p>`
     }
     </div>`
     : ``

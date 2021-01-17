@@ -12,7 +12,7 @@ exports.render = function (data) {
     </div>
     ${
       (data.featured_image_caption)
-      ? `<p class="text-center font-sans text-xs tracking-normal mt-1">${data.featured_image_caption}</p>`
+      ? /*html*/ `<p class="text-center font-sans text-xs tracking-normal mt-1">${data.featured_image_caption}</p>`
       : ``
     }
     <div class="container px-8 lg:grid lg:grid-cols-5 lg:gap-16 xb:gap-32 lg:w-3/4 xb:w-7/12 mr-auto ml-auto">
@@ -22,8 +22,8 @@ exports.render = function (data) {
         Published: ${this.pub_lastmod(data.page.date)}
         ${
           data.lastmod !== null && data.lastmod !== undefined
-          ? `<br />Last modified: ${this.pub_lastmod(data.lastmod)}`
-          : `&nbsp;`
+          ? /*html*/ `<br />Last modified: ${this.pub_lastmod(data.lastmod)}`
+          : /*html*/ `&nbsp;`
         }
       </p>
         ${data.content}
@@ -31,8 +31,7 @@ exports.render = function (data) {
       <div class="col-span-2 border-black border-t lg:border-0 pt-4 lg:pt-0">
         <h2 class="h1 mb-4">Recent <a href="/posts/">posts</a></h2>
         ${
-          data.collections.post.reverse().slice(0, 5).map(post =>
-          `
+          data.collections.post.reverse().slice(0, 5).map(post => /*html*/ `
         <div class="font-sans">
           <h2 class="h4 not-italic tracking-tight"><a href="${post.url}">${post.data.title}</a></h2>
           <p class="font-bold text-base mt-2 mb-0 leading-5">${post.data.subtitle}</p>
@@ -40,7 +39,7 @@ exports.render = function (data) {
             Published: <time style="display: inline;" datetime="${this.pub_lastmod(post.date)}}">${this.pub_lastmod(post.date)}</time>
             ${
               post.data.lastmod
-              ? `
+              ? /*html*/ `
             <br />Last modified: <time style="display: inline;" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}</time>
               `
               : ``
