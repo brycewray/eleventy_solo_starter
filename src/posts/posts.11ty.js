@@ -29,7 +29,7 @@ exports.render = function (data) {
     }
   </p>
 `
-  return `
+  return /*html*/ `
   <main class="py-16">
 	<div class="px-10 w-full md:w-2/3 lg:w-1/2 mx-auto">
 		<h1 class="text-center tracking-tight">Posts</h1>

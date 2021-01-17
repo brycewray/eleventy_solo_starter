@@ -6,7 +6,7 @@ exports.data = {
 }
 
 // following (as opposed to 'module.exports = `` without 'data') needed to work with above front matter
-exports.render = data => `
+exports.render = data => /*html*/ `
   <main>
     <h1 class="text-center mt-8">Page not found</h1>
     <div class="post-line"></div>

@@ -2,7 +2,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addShortcode('headTag', function(data) {
 
-    return `
+    return /*html*/ `
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=10"><!-- due to IE 11 issue with TWCSS -->
     <meta name="generator" content="Eleventy - 11ty - https://11ty.dev - v${require(`@11ty/eleventy/package.json`).version}" />        
