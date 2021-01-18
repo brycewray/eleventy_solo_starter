@@ -5,195 +5,171 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
  */
-code {
-  background: #dfefff;
- }
 
- @media (prefers-color-scheme: dark) {
-  code {
-    background: #0e2e3e;
-  }
- }
- 
- code[class*="language-"],
- pre[class*="language-"] {
-   color: #ccc;
-   background: none;
-   text-align: left;
-   white-space: pre;
-   word-spacing: normal;
-   word-break: normal;
-   word-wrap: normal;
-   line-height: 1.5;
- 
-   -moz-tab-size: 4;
-   -o-tab-size: 4;
-   tab-size: 4;
- 
-   -webkit-hyphens: none;
-   -moz-hyphens: none;
-   -ms-hyphens: none;
-   hyphens: none;
- 
- }
- 
- /* Code blocks */
- pre[class*="language-"] {
-   padding: 1em;
-   margin: .5em 0;
-   overflow: auto;
- }
- 
- :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
-   background: #2d2d2d;
- }
- 
- /* Inline code */
- :not(pre) > code[class*="language-"] {
-   padding: .1em;
-   border-radius: .3em;
-   white-space: normal;
- }
- 
- .token.comment,
- .token.block-comment,
- .token.prolog,
- .token.doctype,
- .token.cdata {
-   color: #999;
- }
- 
- .token.punctuation {
-   color: #ccc;
- }
- 
- .token.tag,
- .token.attr-name,
- .token.namespace,
- .token.deleted {
-   color: #e2777a;
- }
- 
- .token.function-name {
-   color: #6196cc;
- }
- 
- .token.boolean,
- .token.number,
- .token.function {
-   color: #f08d49;
- }
- 
- .token.property,
- .token.class-name,
- .token.constant,
- .token.symbol {
-   color: #f8c555;
- }
- 
- .token.selector,
- .token.important,
- .token.atrule,
- .token.keyword,
- .token.builtin {
-   color: #cc99cd;
- }
- 
- .token.string,
- .token.char,
- .token.attr-value,
- .token.regex,
- .token.variable {
-   color: #7ec699;
- }
- 
- .token.operator,
- .token.entity,
- .token.url {
-   color: #67cdcc;
- }
- 
- .token.important,
- .token.bold {
-   font-weight: bold;
- }
- .token.italic {
-   font-style: italic;
- }
- 
- .token.entity {
-   cursor: help;
- }
- 
- .token.inserted {
-   color: green;
- }
- 
- div.code-toolbar {
-   position: relative;
- }
- 
- div.code-toolbar > .toolbar {
-   position: absolute;
-   top: .3em;
-   right: .2em;
-   opacity: 1;
- }
- 
- div.code-toolbar:hover > .toolbar {
-   opacity: 1;
- }
- 
- /* Separate line b/c rules are thrown out if selector is invalid.
-    IE11 and old Edge versions don't support :focus-within. */
- div.code-toolbar:focus-within > .toolbar {
-   opacity: 1;
- }
- 
- div.code-toolbar > .toolbar .toolbar-item {
-   display: inline-block;
- }
+ code {
+  @apply bg-gray-200 dark:bg-gray-800;
+}
 
- div.code-toolbar > .toolbar .toolbar-item span {
-   color: #fff;
- }
- 
- div.code-toolbar > .toolbar a {
-   cursor: pointer;
- }
- 
- div.code-toolbar > .toolbar button {
-   background: none;
-   border: 0;
-   color: inherit;
-   font: inherit;
-   line-height: normal;
-   overflow: visible;
-   padding: 0;
-   user-select: none; /* for button */
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
- }
- 
- div.code-toolbar > .toolbar a,
- div.code-toolbar > .toolbar button,
- div.code-toolbar > .toolbar span {
-   background: #000;
-   border-radius: .5em;
-   box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-   color: #fff; /* was #bbb */
-   font-size: .8em;
-   padding: 0 .5em;
- }
- 
- div.code-toolbar > .toolbar a:hover,
- div.code-toolbar > .toolbar a:focus,
- div.code-toolbar > .toolbar button:hover,
- div.code-toolbar > .toolbar button:focus,
- div.code-toolbar > .toolbar span:hover,
- div.code-toolbar > .toolbar span:focus {
-   color: inherit;
-   text-decoration: none;
- }
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply text-gray-100 bg-transparent whitespace-pre text-left break-normal leading-normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  tab-size: 4; 
+  hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  @apply p-4 my-2 mx-0 overflow-auto;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  @apply bg-gray-800;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  @apply whitespace-normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-gray-400;
+}
+
+.token.punctuation {
+  @apply text-gray-300;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
+
+div.code-toolbar {
+  @apply relative;
+}
+
+div.code-toolbar > .toolbar {
+@apply absolute opacity-100;
+  top: .3em;
+  right: .2em;
+}
+
+div.code-toolbar:hover > .toolbar {
+  @apply opacity-100;
+}
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+  IE11 and old Edge versions don't support :focus-within. */
+div.code-toolbar:focus-within > .toolbar {
+  @apply opacity-100;
+}
+
+div.code-toolbar > .toolbar .toolbar-item {
+  @apply inline-block;
+}
+
+div.code-toolbar > .toolbar .toolbar-item span {
+  @apply text-white;
+}
+
+div.code-toolbar > .toolbar a {
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar button {
+@apply bg-transparent border-0 leading-normal overflow-visible p-0;
+  color: inherit;
+  font: inherit;
+  user-select: none; /* for button */
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+@apply bg-black text-white py-0 px-2;
+  border-radius: .5em;
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+  font-size: .8em;
+}
+
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a:focus,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span:focus {
+  @apply no-underline;
+  color: inherit;
+}
+
+article code {
+  font-size: 0.9em;
+  @apply bg-gray-200 dark:bg-gray-700;
+}
