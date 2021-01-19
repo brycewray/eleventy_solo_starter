@@ -34,7 +34,7 @@ exports.render = function (data) {
           data.collections.post.reverse().slice(0, 5).map(post => /*html*/ `
         <div class="font-sans">
           <h2 class="h4 not-italic tracking-tight"><a href="${post.url}">${post.data.title}</a></h2>
-          <p class="text-base mt-2 mb-0 leading-5" style="font-weight: 625;">${post.data.subtitle}</p>
+          <p class="font-bold text-base mt-2 mb-0 leading-5">${post.data.subtitle}</p>
           <p class="text-xs tracking-normal mt-0 mb-1">
             Published: <time style="display: inline;" datetime="${this.pub_lastmod(post.date)}}">${this.pub_lastmod(post.date)}</time>
             ${

@@ -2,6 +2,10 @@ main {
   @apply pt-12; /* needed in Eleventy repo; handled elsewhere in Hugo repo */
 }
 
+b, strong {
+  font-weight: 625;
+}
+
 html, body {
   @apply dark:bg-black;
 }
@@ -299,8 +303,7 @@ table.noborders thead tr {
 }
   
 table.noborders thead td {
-  @apply text-white;
-  font-weight: 625;
+  @apply text-white font-bold;
 }
   
 table.noborders td.td70 {
