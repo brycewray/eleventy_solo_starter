@@ -42,9 +42,16 @@
     "del": "^6.0.0",
     "eleventy-plugin-error-overlay": "^0.1.2",
     "fibers": "^5.0.0",
+    "get-json": "^1.0.1",
     "glob": "^7.1.6",
     "glob-all": "^3.2.1",
+    "html-minifier": "^4.0.0",
+    "image-size": "^0.9.3",
+    "imagemin": "^7.0.1",
+    "imagemin-pngquant": "^9.0.1",
     "inline-source-map": "^0.6.2",
+    "jsonfile": "^6.1.0",
+    "junk": "^3.1.0",
     "lodash": "^4.17.20",
     "luxon": "^1.25.0",
     "markdown-it": "^12.0.4",
@@ -53,9 +60,12 @@
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-prism": "^2.1.4",
+    "md5": "^2.3.0",
+    "node-dir": "^0.1.17",
     "node-fetch": "^2.6.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.4",
+    "postcss-clean": "^1.2.0",
     "postcss-cli": "^8.3.1",
     "postcss-css-variables": "^0.17.0",
     "postcss-import": "^13.0.0",
@@ -68,16 +78,5 @@
     "sharp": "^0.26.3",
     "tailwindcss": "^2.0.2"
   },
-  "dependencies": {
-    "get-json": "^1.0.1",
-    "html-minifier": "^4.0.0",
-    "image-size": "^0.9.3",
-    "imagemin": "^7.0.1",
-    "imagemin-pngquant": "^9.0.1",
-    "jsonfile": "^6.1.0",
-    "junk": "^3.1.0",
-    "md5": "^2.3.0",
-    "node-dir": "^0.1.17",
-    "postcss-clean": "^1.2.0"
-  }
+  "dependencies": {}
 }
