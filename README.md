@@ -1,6 +1,6 @@
 # Eleventy starter set
 
-This is a starter set for the [Eleventy](https://11ty.dev) [static site generator (SSG)](https://staticgen.com); it’s based on my website at [brycewray.com](https://brycewray.com).
+This is a starter set for the [Eleventy](https://11ty.dev) [static site generator (SSG)](https://staticgen.com); its appearance is based on the former appearance of my website at [brycewray.com](https://brycewray.com) when it used Eleventy.
 
 See the [online demo](https://eleventy-solo-starter-alpha.vercel.app/).
 
