@@ -55,7 +55,6 @@
     "lodash": "^4.17.20",
     "luxon": "^1.25.0",
     "markdown-it": "^12.0.4",
-    "markdown-it-attrs": "^3.0.3",
     "markdown-it-bracketed-spans": "^1.0.1",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-link-attributes": "^3.0.0",
@@ -77,6 +76,5 @@
     "sanitize-html": "^2.3.0",
     "sharp": "^0.26.3",
     "tailwindcss": "^2.0.2"
-  },
-  "dependencies": {}
+  }
 }
