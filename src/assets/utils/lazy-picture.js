@@ -38,7 +38,7 @@ module.exports = (url, alt, tmpl) => {
       divClass = `relative`
       imgClass = `lazy containedImage`
       nscClass = `containedImage`
-      dataSzes = `(min-width: 1024px) 25vw, 100vw`
+      dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
   
   var ext = url.substring((url.lastIndexOf('.') + 1))
