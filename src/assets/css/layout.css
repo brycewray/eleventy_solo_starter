@@ -2,10 +2,6 @@ main {
   @apply pt-12; /* needed in Eleventy repo; handled elsewhere in Hugo repo */
 }
 
-b, strong {
-  font-weight: 625;
-}
-
 html, body {
   @apply dark:bg-black;
 }
@@ -13,6 +9,10 @@ html, body {
 body {
   @apply font-serif dark:text-gray-200;
   font-feature-settings: "liga" 1;
+}
+
+b, strong {
+  font-weight: 625;
 }
 
 p, li {
@@ -324,7 +324,12 @@ blockquote {
 
 /* start, footnotes */
 
+.footnotes {
+  @apply font-sans;
+}
+
 .footnote-ref {
+  @apply font-sans;
   font-size: 0.65em;
 }
 
@@ -359,7 +364,7 @@ hr {
 }
 
 footer {
-  @apply font-sans bg-gradient-to-t from-transparent dark:from-blue-700;
+  @apply font-sans;
 }
 
 .lazypicturecaption {

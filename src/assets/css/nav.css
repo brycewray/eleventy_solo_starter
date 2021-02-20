@@ -20,7 +20,7 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
 
 @media (min-width: 900px) {
   .nav__item {
-    @apply lowercase text-xs inline-block font-bold;
+    @apply font-bold lowercase text-xs inline-block;
     font-variant: small-caps;
     letter-spacing: 0.15rem;
     & a {
@@ -73,7 +73,7 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
    &:checked {
      & ~ nav .nav__items {
        height: auto;
-       @apply bg-blue-700 transition-all duration-500 ease-linear;
+       @apply bg-black dark:bg-blue-700 transition-all duration-500 ease-linear;
        max-height: 30rem;
      }
      & ~ label .nav__icon-line:first-child {
