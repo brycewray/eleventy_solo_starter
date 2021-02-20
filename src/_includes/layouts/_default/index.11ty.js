@@ -1,51 +1,35 @@
-const stringtoRet = require('../../../assets/utils/lazy-picture.js')
-
 exports.data = {
   layout: 'layouts/_default/base.11ty.js'
 }
 
 exports.render = function (data) {
   return /*html*/ `
-  <main>
-    <div class="w-full height-hero">
-      ${stringtoRet(data.featured_image, data.featured_image_alt, "index")}
-    </div>
-    ${
-      (data.featured_image_caption)
-      ? /*html*/ `<p class="text-center font-sans text-xs tracking-normal mt-1">${data.featured_image_caption}</p>`
-      : ``
-    }
-    <div class="container px-8 lg:grid lg:grid-cols-5 lg:gap-16 xb:gap-32 lg:w-3/4 xb:w-7/12 mr-auto ml-auto">
-      <div class="col-span-3 home-colOne">
-        <h1>Welcome.</h1>
-        <p class="font-sans text-xs tracking-normal mt-1 mb-0 dateInfo" style="line-height: 1.5 !important;">
-        Published: ${this.pub_lastmod(data.page.date)}
-        ${
-          data.lastmod !== null && data.lastmod !== undefined
-          ? /*html*/ `<br />Last modified: ${this.pub_lastmod(data.lastmod)}`
-          : /*html*/ `&nbsp;`
-        }
-      </p>
-        ${data.content}
+  <main class="p-0">
+    <div class="pt-6 lg:pt-12 lg:flex w-full mr-auto ml-auto">
+      <div class="bg-transparent lg:bg-gradient-to-b from-blue-700 to-black lg:dark:bg-gradient-to-b lg:dark:from-black lg:dark:to-blue-700 lg:w-5/12 px-8 lg:pl-16 lg:pr-16 pt-16 lg:text-white text-center lg:text-right">
+        <h1 class="lg:leading-normal text-3xl lg:text-4xl 2xl:text-6xl lg:pt-10">Home page</h1>
+        <p class="font-sans">This sentence comes from the template.</p>
+        <div class="font-sans">${data.content}</div>
       </div>
-      <div class="col-span-2 border-black border-t lg:border-0 pt-4 lg:pt-0">
-        <h2 class="h1 mb-4">Recent <a href="/posts/">posts</a></h2>
+      <div class="text-center lg:text-left lg:w-7/12 lg:pl-16 lg:pt-16">
+        <div class="mt-8 border-blue-700 dark:border-white mx-auto my-auto w-3/5 border-solid border-b-4 lg:hidden"></div>
+        <h2 class="h1 mt-4 lg:mt-0 mb-4 lg:mb-10 text-3xl lg:text-5xl 2xl:text-7xl">Latest <a href="/posts/">posts</a></h2>
         ${
-          data.collections.post.reverse().slice(0, 5).map(post => /*html*/ `
-        <div class="font-sans">
-          <h2 class="h4 not-italic tracking-tight"><a href="${post.url}">${post.data.title}</a></h2>
-          <p class="font-bold text-base mt-2 mb-0 leading-5">${post.data.subtitle}</p>
-          <p class="text-xs tracking-normal mt-0 mb-1">
-            Published: <time style="display: inline;" datetime="${this.pub_lastmod(post.date)}}">${this.pub_lastmod(post.date)}</time>
+          data.collections.post.reverse().slice(0, 3).map(post => /*html*/ `
+        <div>
+          <h2 class="not-italic tracking-tight text-2xl lg:text-3xl 2xl:text-4xl"><a href="${post.url}">${post.data.title}</a></h2>
+          <p class="font-sans font-bold mt-1 mb-0 leading-5 text-xl lg:text-2xl 2xl:text-3xl">${post.data.subtitle}</p>
+          <p class="font-sans text-sm tracking-normal mt-1 mb-0 dateInfo">
+            <time class="inline" datetime="${this.pub_lastmod(post.date)}}"><strong>${this.pub_lastmod(post.date)}</strong></time>
             ${
               post.data.lastmod
               ? /*html*/ `
-            <br />Last modified: <time style="display: inline;" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}</time>
+            <br />Last modified <time class="inline" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}</time>
               `
               : ``
             }
           </p>
-          <p class="text-sm mt-2 mb-3">
+          <p class="font-sans text-base mt-1 mb-4 lg:mb-10">
             ${post.data.description}
           </p>
         </div>

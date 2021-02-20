@@ -3,7 +3,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode('siteHeader', function() {
 
     return /*html*/ `
-    <header class="h-12 bg-blue-700 w-full fixed p-0 mt-0 z-50">
+    <header class="h-12 bg-black dark:bg-blue-700 w-full fixed p-0 mt-0 z-50">
       <p class="text-white font-bold mt-2 pt-1 text-lg ml-4 md:ml-8 lg:ml-10 xb:ml-16 w-full"><a href="/" class="font-sans text-white active:text-gray-400 hover:text-gray-400" style="border: 0 !important; text-decoration: none !important;">Site name goes here</a></p>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
       <label for="nav-toggle" class="nav__icon" aria-hidden="true">

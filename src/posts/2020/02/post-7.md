@@ -1,5 +1,5 @@
 ---
-layout: layouts/posts/singlepostherofit.11ty.js
+layout: layouts/posts/singlepost.11ty.js
 tags: post
 title: "Post 7 with its UNIQUE title"
 subtitle: "The UNIQUE Post 7 subtitle"

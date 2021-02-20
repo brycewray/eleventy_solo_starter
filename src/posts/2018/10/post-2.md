@@ -1,5 +1,5 @@
 ---
-layout: layouts/posts/singlepostherofit.11ty.js
+layout: layouts/posts/singlepost.11ty.js
 tags: post
 title: "Post 2 with its UNIQUE title" # Quotation marks allow colons, semicolons, etc.
 subtitle: "The UNIQUE Post 2 subtitle" # Quotation marks allow colons, semicolons, etc.
@@ -11,8 +11,6 @@ featured_image: computer-1869236_3264x2448.jpg # Or whatever image you want to u
 featured_image_alt: Backlit computer keyboard # Always include an ALT tag for accessibility
 featured_image_caption: "Image: Pixabay" # Quotation marks allow colons, semicolons, etc.
 ---
-
-**Note**: Want to put some note here about *why* you updated it? That's what the CSS `yellowBox` class is for, and you can easily add it in Markdown as shown in the .md file thanks to the `markdown-it-attrs` plugin.{.yellowBox}
 
 Your opening text goes here.
 

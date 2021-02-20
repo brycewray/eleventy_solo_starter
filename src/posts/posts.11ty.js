@@ -30,9 +30,9 @@ exports.render = function (data) {
   </p>
 `
   return /*html*/ `
-  <main class="py-16">
-	<div class="px-10 w-full md:w-2/3 lg:w-1/2 mx-auto">
-		<h1 class="text-center tracking-tight">Posts</h1>
+<main>
+  <div class="font-sans text-center px-10 w-full md:w-2/3 lg:w-1/2 mx-auto">
+    <h1 class="tracking-tight pt-8 lg:pt-10 2xl:pt-12 text-5xl">Posts</h1>
     <div class="post-line"></div>
     <div class="font-sans">
       ${pagerThing}
@@ -40,13 +40,13 @@ exports.render = function (data) {
       ${
         data.pagination.items.map(post => /*html*/ `
         <div>          
-          <h2 class="text-xl mb-1 leading-tight tracking-tight"><a href="${post.url}">${post.data.title}</a><br />
-          <span class="text-base tracking-tight">${post.data.subtitle}</span></h2>
-          <p class="text-xs dateInfo" style="margin-top: 0;">
-            Published: <time style="display: inline;" datetime="${this.pub_lastmod(post.date)}}">${this.pub_lastmod(post.date)}</time>
+          <h2 class="text-2xl lg:text-3xl 2xl:text-4xl mb-1 leading-tight tracking-tight"><a href="${post.url}">${post.data.title}</a><br />
+          <span class="text-lg lg:text-xl 2xl:text-2xl tracking-tight">${post.data.subtitle}</span></h2>
+          <p class="text-sm dateInfo mt-0">
+            <time class="inline" datetime="${this.pub_lastmod(post.date)}}"><strong>${this.pub_lastmod(post.date)}</strong></time>
             ${
               post.data.lastmod
-              ? /*html*/ `<br />Last modified: <time style="display: inline;" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}`
+              ? /*html*/ `<br />Last modified <time class="inline" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}`
               : ``
             }
           </p>
