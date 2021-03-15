@@ -24,7 +24,9 @@
   "author": "",
   "license": "MIT",
   "browserslist": [
-    "defaults",
+    "last 4 versions",
+    "> 1%",
+    "IE 11",
     "maintained node versions"
   ],
   "devDependencies": {
