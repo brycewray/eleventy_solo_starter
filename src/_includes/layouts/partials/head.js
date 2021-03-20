@@ -1,7 +1,14 @@
+const fs = require('fs')
+var internalCSS = ''
+var internalCSSPath = 'src/_includes/css/index.css'
+if (process.env.NODE_ENV === 'production') {
+  if(fs.existsSync(internalCSSPath)) {
+    internalCSS = fs.readFileSync(internalCSSPath)
+  }  
+}
+
 module.exports = function(eleventyConfig) {
-
   eleventyConfig.addShortcode('headTag', function(data) {
-
     return /*html*/ `
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=10"><!-- due to IE 11 issue with TWCSS -->
@@ -39,18 +46,11 @@ module.exports = function(eleventyConfig) {
 
     <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon.png">
 
-    <link rel="preload" as="style" href="/css/${data.csshash['index.css']}" />
-    <link rel="stylesheet" href="/css/${data.csshash['index.css']}" type="text/css" />
-
-    <noscript>
-      <!-- Dark mode for Twitter items if browser blocks JS at bottom; it’s debatable whether it’s needed since non-JS Twitter is pretty spare and mostly adheres to other CSS, but we’ll do it just to be consistent -->
-      <meta name="twitter:widgets:theme" content="dark">
-      <meta name="twitter:widgets:link-color" content="#00bbff">
-    </noscript>
-
+    ${ process.env.NODE_ENV === 'production' 
+      ? /*html*/ `<style>${internalCSS}</style>`
+      : /*html*/ `<link rel="stylesheet" href="/css/index.css" type="text/css"  />`
+    }
   </head>
     `
-
   })
-
 }
