@@ -65,3 +65,5 @@ arraytest.js
 .firebaserc
 .Ulysses*.plist
 ztest.js
+
+src/_includes/css/*.*
