@@ -96,7 +96,8 @@ module.exports = function (eleventyConfig) {
       "src/assets/css/*.css",
       "src/**/*.md",
     ],
-    ghostMode: false
+    ghostMode: false,
+    port: 3000,
   })
 
   eleventyConfig.addPlugin(ErrorOverlay)

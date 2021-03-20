@@ -11,13 +11,11 @@
     "testbuild": "NODE_ENV=production npm-run-all clean postcss-build imgs --parallel testProd:*",
     "postcss-build": "postcss src/assets/css/index.css -o src/_includes/css/index.css --config ./postcss.config.js",
     "dev:postcss": "postcss src/assets/css/index.css -o _site/css/index.css --config ./postcss.config.js -w",
-    "dev:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode",
-    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --watch --quiet",
+    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --watch --quiet --serve",
     "prod:postcss": "postcss src/assets/css/index.css -o src/_includes/css/index.css --config ./postcss.config.js",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
     "testProd:postcss": "postcss src/assets/css/index.css -o src/_includes/css/index.css --config ./postcss.config.js -w",
-    "testProd:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode",
-    "testProd:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site --watch"
+    "testProd:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site --watch --quiet --serve"
   },
   "keywords": [],
   "author": "",
