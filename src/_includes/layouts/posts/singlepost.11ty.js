@@ -7,7 +7,7 @@ exports.render = function (data) {
 <main class="pt-12">
   ${this.billBoard(data)}
   <div class="mt-8 lg:mt-12 2xl:mt-16 border-blue-700 dark:border-white mx-auto my-auto w-1/5 border-solid border-b-4"></div>
-  <div class="sm:w-5/6 md:w-4/5 xl:w-1/2 xb:w-5/12 mt-10 mr-auto ml-auto px-6 lg:px-16">
+  <div class="sm:w-5/6 md:w-4/5 xl:w-1/2 xb:w-5/12 mt-10 mr-auto ml-auto px-6 lg:px-0">
     <article>
       ${data.content}
     </article>
