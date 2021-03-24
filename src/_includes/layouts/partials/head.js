@@ -14,7 +14,7 @@ module.exports = function(eleventyConfig) {
     <meta http-equiv="X-UA-Compatible" content="IE=10"><!-- due to IE 11 issue with TWCSS -->
     <meta name="generator" content="Eleventy - 11ty - https://11ty.dev - v${require(`@11ty/eleventy/package.json`).version}" />        
     ${
-      (data.title == "Home page")
+      (data.page.url == "/")
       ? /*html*/ `
       <title>${data.siteparams.siteTitle}</title> 
       <meta property="og:title" content="${data.siteparams.siteTitle}" />
