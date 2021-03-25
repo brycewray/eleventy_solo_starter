@@ -44,7 +44,9 @@ module.exports = function(eleventyConfig) {
       : `${data.siteparams.siteURLforOG}`
     }" />
 
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-96x96.png" sizes="96x96" />
 
     ${ process.env.NODE_ENV === 'production' 
       ? /*html*/ `<style>${internalCSS}</style>`
