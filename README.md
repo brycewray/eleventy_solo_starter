@@ -21,4 +21,5 @@ See the [online demo](https://eleventy-solo-starter-alpha.vercel.app/).
 - Lazy-loading of some images through use of [lazyload](https://github.com/verlok/vanilla-lazyload).
 - Responsive images through my run-time `imgxfm.js` script and `lazypicture` shortcode.
 - [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com).
+- [Alpine.js](https://github.com/alpinejs/alpine) for the nav menu.
 - Internal CSS in production mode, which is better for performance scores because it means one fewer [render-blocking resource](https://web.dev/render-blocking-resources/). In development mode, the CSS comes from a locally called `index.css` file, (**but** it’ll be a **huge** file, due to how Tailwind and [PurgeCSS](https://purgecss.com/) work in dev mode, so you may want to try using the experimental **[@tailwindcss/jit](https://github.com/tailwindlabs/tailwindcss-jit) library**; read more about it in [this announcement](https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css)). If you’re interested, there’s an [alternative version of this repo](https://github.com/brycewray/eleventy_solo_starter_twjit) that uses @tailwind/jit.
