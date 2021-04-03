@@ -1,0 +1,9 @@
+/* === handling obliquing issues in Firefox */
+
+@supports (-moz-appearance: none) {
+  .italic, i, cite, em, var, address, dfn, h3, .h3, h5, .h5 {
+    font-style: oblique 8deg;
+  }
+}
+
+/* === end, handling obliquing issues in Firefox */

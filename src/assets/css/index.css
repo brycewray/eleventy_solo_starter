@@ -3,5 +3,6 @@
 @import 'tailwindcss/base';
 @import 'layout.css';
 @import 'tailwindcss/components';
+@import 'ffoxobliq.css';
 /*! purgecss end ignore */
 @import 'tailwindcss/utilities';
