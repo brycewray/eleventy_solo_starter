@@ -74,7 +74,7 @@
     "prismjs": "^1.23.0",
     "rimraf": "^3.0.2",
     "sanitize-html": "^2.3.3",
-    "sharp": "^0.28.0",
-    "tailwindcss": "^2.0.4"
+    "sharp": "^0.28.1",
+    "tailwindcss": "^2.1.0"
   }
 }
