@@ -4,7 +4,7 @@ const ofotigrid = require('./src/_includes/ofotigrid.js')
 const ErrorOverlay = require('eleventy-plugin-error-overlay')
 const Image = require('@11ty/eleventy-img')
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
 
   // theming -- based on Reuben Lillie's code (https://gitlab.com/reubenlillie/reubenlillie.com/)
   ofotigrid(eleventyConfig)
