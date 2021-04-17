@@ -7,9 +7,6 @@ description: "The UNIQUE description for Post 6." # Quotation marks allow colons
 author: Your name goes here
 date: 2019-06-08T20:25:00 # This would be 8:25 PM (2025) UTC on June 8, 2019
 lastmod: 2019-07-25T19:05:00 # Comment-out this line with a # if content is unchanged
-featured_image: MailMate_screen_cap_1619x720.jpg # Or whatever image you want to use
-featured_image_alt: Screen capture of the MailMate app # Always include an ALT tag for accessibility
-featured_image_caption: "Image: Screen capture of MailMate, with its Latin-displaying “distortion mode” engaged for privacy’s sake" # Quotation marks allow colons, semicolons, etc.
 ---
 
 Your opening text goes here.

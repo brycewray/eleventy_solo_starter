@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf _site src/_includes/css",
-    "imgs": "node imgxfm.js",
-    "start": "NODE_ENV=development npm-run-all clean imgs --parallel dev:*",
-    "build": "NODE_ENV=production npm-run-all clean postcss-build imgs --parallel prod:*",
-    "testbuild": "NODE_ENV=production npm-run-all clean postcss-build imgs --parallel testProd:*",
+    "start": "NODE_ENV=development npm-run-all clean --parallel dev:*",
+    "build": "NODE_ENV=production npm-run-all clean postcss-build --parallel prod:*",
+    "testbuild": "NODE_ENV=production npm-run-all clean postcss-build --parallel testProd:*",
     "postcss-build": "postcss src/assets/css/index.css -o src/_includes/css/index.css --config ./postcss.config.js",
     "dev:postcss": "postcss src/assets/css/index.css -o _site/css/index.css --config ./postcss.config.js -w",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --quiet --serve",
@@ -28,16 +27,12 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@babel/register": "^7.13.14",
+    "@11ty/eleventy-img": "^0.8.3",
     "autoprefixer": "^10.2.5",
     "eleventy-plugin-error-overlay": "^0.1.2",
     "glob": "^7.1.6",
     "glob-all": "^3.2.1",
     "html-minifier": "^4.0.0",
-    "image-size": "^0.9.7",
-    "imagemin": "^7.0.1",
-    "imagemin-pngquant": "^9.0.2",
-    "inline-source-map": "^0.6.2",
     "luxon": "^1.26.0",
     "markdown-it": "^12.0.4",
     "markdown-it-bracketed-spans": "^1.0.1",
@@ -51,8 +46,6 @@
     "postcss-import": "^14.0.1",
     "postcss-preset-env": "^6.7.0",
     "rimraf": "^3.0.2",
-    "sanitize-html": "^2.3.3",
-    "sharp": "^0.28.1",
     "tailwindcss": "^2.1.0"
   }
 }

@@ -1,8 +1,8 @@
 const { DateTime } = require('luxon')
 const htmlmin = require('html-minifier')
 const ofotigrid = require('./src/_includes/ofotigrid.js')
-const sanitizeHTML = require('sanitize-html')
 const ErrorOverlay = require('eleventy-plugin-error-overlay')
+const Image = require('@11ty/eleventy-img')
 
 module.exports = function (eleventyConfig) {
 
@@ -101,8 +101,28 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addPlugin(ErrorOverlay)
- 
-  eleventyConfig.addShortcode("lazypicture", require("./src/assets/utils/lazy-picture.js"))
+
+  
+  // --- START, eleventy-img
+  async function imageShortcode(src, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
+    let metadata = await Image(src, {
+      widths: [300, 450, 600, 750, 900, 1050, 1200, 1350, 1500],
+      formats: ["webp", "jpeg"],
+      urlPath: "/images/",
+      outputDir: "./_site/images/",
+    });
+  
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+  
+    return Image.generateHTML(metadata, imageAttributes);
+  }
+  eleventyConfig.addShortcode("image", imageShortcode)
+  // --- END, eleventy-img
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if( outputPath.endsWith(".html") ) {
