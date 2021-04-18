@@ -1,8 +1,15 @@
+const cssnano = require('cssnano')({
+  preset: 'default',
+})
+
 module.exports = {
   plugins: [
+    require('postcss-nesting'),
     require('postcss-import'),
     require('tailwindcss'),
-    require('postcss-preset-env')({ stage: 1 }),
-    require('postcss-clean'),
+    require('autoprefixer'),
+    ...process.env.NODE_ENV === 'production'
+      ? [cssnano]
+      : []
   ],
 }

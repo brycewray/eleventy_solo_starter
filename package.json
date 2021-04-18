@@ -29,6 +29,7 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^0.8.3",
     "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.1",
     "eleventy-plugin-error-overlay": "^0.1.2",
     "glob": "^7.1.6",
     "glob-all": "^3.2.1",
@@ -44,7 +45,7 @@
     "postcss-clean": "^1.2.2",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.1",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-nesting": "^7.0.1",
     "rimraf": "^3.0.2",
     "tailwindcss": "^2.1.0"
   }
