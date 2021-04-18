@@ -1,5 +1,5 @@
 main {
-  @apply pt-12; /* needed in Eleventy repo; handled elsewhere in Hugo repo */
+  @apply pt-12;
 }
 
 html, body {
@@ -8,7 +8,6 @@ html, body {
 
 body {
   @apply font-serif dark:text-gray-200;
-  font-feature-settings: "liga" 1;
 }
 
 b, strong {
