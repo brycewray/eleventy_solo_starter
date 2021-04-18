@@ -400,24 +400,3 @@ footer {
     width: 40%;
   }
 }
-
-/* from vanilla-lazyload */
-.lazy {
-  @apply opacity-0;
-}
-
-.lazy:not(.initial) {
-  @apply transition-opacity duration-500 ease-in-out;
-  /* transition: opacity 0.4s; */
-}
-
-.lazy.initial,
-.lazy.loaded,
-.lazy.error {
-  @apply opacity-100;
-}
-
-.lazy:not([src]) {
-  visibility: hidden;
-}
-/* end of CSS from vanilla-lazyload */
