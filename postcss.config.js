@@ -3,8 +3,6 @@ module.exports = {
     require('postcss-import'),
     require('tailwindcss'),
     require('autoprefixer'),
-    require('postcss-csso')({
-      restructure: true
-    }),
+    require('postcss-csso'),
   ],
 }
