@@ -183,7 +183,7 @@ h5, .h5, h6, .h6 {
   }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   .background-hero-title-block-fit {
     @apply px-16;
   }
@@ -215,7 +215,7 @@ article img.containedImage {
   /* latter two for no-jank in Chrome and Firefox */
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .height-hero {
     height: 70vh;
     max-height: 70vh;
@@ -227,7 +227,7 @@ article img.containedImage {
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   article p, li {
     @apply text-xl leading-relaxed;
   }
@@ -374,14 +374,6 @@ footer {
   @apply text-sm p-0 mt-2 leading-snug text-center;
 }
 
-.YTembed { /* container for iframe */
-  @apply relative pt-8 h-0 overflow-hidden;
-  padding-bottom: 56.25%;
-  & iframe, & object, & embed {
-    @apply absolute top-0 left-0 w-full h-full;
-  }
-}
-
 .home-colOne p {
   @apply leading-8 mb-4;
 }
@@ -396,7 +388,10 @@ footer {
   width: 85%;
   max-width: 720px !important;
   margin-bottom: 0;
-  @media screen and (min-width: 900px) {
+}
+
+@media screen and (min-width: 900px) {
+  .container-comments {
     width: 40%;
   }
 }

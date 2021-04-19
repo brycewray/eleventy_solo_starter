@@ -6,7 +6,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
- code {
+code {
   @apply bg-[#dfeeff] dark:bg-gray-800;
 }
 
@@ -144,7 +144,7 @@ div.code-toolbar > .toolbar a {
 }
 
 div.code-toolbar > .toolbar button {
-@apply bg-transparent border-0 leading-normal overflow-visible p-0;
+  @apply bg-transparent border-0 leading-normal overflow-visible p-0;
   color: inherit;
   font: inherit;
   user-select: none; /* for button */
