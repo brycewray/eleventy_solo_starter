@@ -1,5 +1,5 @@
 ---
-layout: layouts/_default/index.11ty.js
+layout: index
 title: "Your UNIQUE title here"
 description: "Your UNIQUE description here." # quotation marks to allow colons where used
 author: Your name here

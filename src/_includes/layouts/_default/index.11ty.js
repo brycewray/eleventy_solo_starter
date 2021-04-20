@@ -1,6 +1,6 @@
 
 exports.data = {
-  layout: 'layouts/_default/base.11ty.js',
+  layout: 'base',
 }
 
 exports.render = function (data) {

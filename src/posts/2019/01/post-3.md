@@ -1,5 +1,5 @@
 ---
-layout: layouts/posts/singlepost.11ty.js
+layout: singlepost
 tags: post
 title: "Post 3 with its UNIQUE title" # Quotation marks allow colons, semicolons, etc.
 subtitle: "The UNIQUE Post 3 subtitle" # Quotation marks allow colons, semicolons, etc.

@@ -1,7 +1,7 @@
 exports.data = {
   locale: 'en',
   title: '404 - Page not found',
-  layout: 'layouts/_default/base.11ty.js',
+  layout: 'base',
   permalink: '404.html'
 }
 

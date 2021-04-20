@@ -1,5 +1,5 @@
 ---
-layout: layouts/posts/singlepost.11ty.js
+layout: singlepost
 title: "The About Me page"
 # Change the title setting for this in /src/_includes/layouts/posts/singlepostherofit.11ty.js
 # to keep the "Other posts" box from appearing at the bottom of this page, since it uses 

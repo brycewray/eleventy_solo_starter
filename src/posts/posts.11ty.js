@@ -1,7 +1,7 @@
 const { svgFirstPageIcon, svgPrevPageIcon, svgNextPageIcon, svgLastPageIcon } = require( '../assets/svg/svgs.js')
 
 exports.data = {
-  layout: 'layouts/_default/base.11ty.js',
+  layout: 'base',
   tags: ['nav'],
   navtitle: 'Posts',
   title: 'Posts',
