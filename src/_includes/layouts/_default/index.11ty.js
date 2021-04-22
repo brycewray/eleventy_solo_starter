@@ -7,7 +7,7 @@ exports.render = function (data) {
   return /*html*/ `
   <main class="p-0">
     <div class="pt-6 lg:pt-12 lg:flex w-full mr-auto ml-auto">
-      <div class="bg-transparent lg:bg-gradient-to-b from-blue-700 to-black lg:dark:bg-gradient-to-b lg:dark:from-black lg:dark:to-blue-700 lg:w-5/12 px-8 lg:pl-16 lg:pr-16 pt-16 lg:text-white text-center lg:text-right">
+      <div class="bg-transparent lg:bg-gradient-to-b lg:from-blue-800 lg:via-blue-400 lg:to-white lg:dark:bg-gradient-to-b lg:dark:from-black lg:dark:via-blue-700 lg:dark:to-black lg:w-5/12 px-8 lg:pl-16 lg:pr-16 pt-16 lg:text-white text-center lg:text-right">
         <h1 class="lg:leading-normal text-3xl lg:text-4xl 2xl:text-6xl lg:pt-10">Home page</h1>
         <p class="font-sans">This sentence comes from the template.</p>
         <div class="font-sans">${data.content}</div>
