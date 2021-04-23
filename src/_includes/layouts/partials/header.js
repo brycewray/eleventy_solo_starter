@@ -3,9 +3,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode('siteHeader', function() {
 
     return /*html*/ `
-    <header class="font-sans font-bold">
+    <header class="font-sans font-extrabold">
       <nav
-        class="flex items-center bg-black dark:bg-blue-700 justify-between flex-wrap px-6 py-2 fixed w-full z-10 top-0"
+        class="flex items-center bg-black dark:bg-blue-700 justify-between flex-wrap px-6 py-2 lg:py-0 fixed w-full z-10 top-0"
         x-data="{ isOpen: false }"
         @keydown.escape="isOpen = false"
       >
@@ -59,7 +59,7 @@ module.exports = function(eleventyConfig) {
           <ul
             class="pt-0 list-reset lg:flex justify-end flex-1 items-center text-right list-none"
           >
-            <li class="text-lg lg:text-sm py-0 my-4 font-bold lg:tracking-widest lg:uppercase">
+            <li class="text-lg lg:text-sm py-0 my-4 font-bold lg:tracking-[0.25em] lg:uppercase">
               <a
                 class="inline-block py-0 px-4"
                 href="/about"
@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
                 >About
               </a>
             </li>
-            <li class="text-lg lg:text-sm py-0 my-4 font-bold lg:tracking-widest lg:uppercase">
+            <li class="text-lg lg:text-sm py-0 my-4 font-bold lg:tracking-[0.25em] lg:uppercase">
               <a
                 class="inline-block py-0 px-4"
                 href="/posts"

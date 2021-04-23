@@ -10,10 +10,6 @@ body {
   @apply font-serif dark:text-gray-200;
 }
 
-b, strong {
-  font-weight: 625;
-}
-
 p, li {
   /* for handling Markdown-created <p> and <li> */
   @apply mb-3 text-lg;
@@ -21,11 +17,10 @@ p, li {
 
 pre, code {
   font-feature-settings: normal;
-  /* @apply text-base; */
 }
 
 .navWhite, .navWhite:visited {
-  color: #fff;
+  @apply text-white;
 }
 
 .navWhite:focus, .navWhite:active {
@@ -64,18 +59,6 @@ nav a, nav a:focus, nav a:hover, nav a:active {
   @apply border-0 text-white hover:text-gray-300;
 }
 
-span.caption {
-  text-shadow: none;
-}
-
-span.caption a {
-  @apply text-blue-100 border-blue-100;
-}
-
-span.caption a:focus, span.caption a:hover, span caption a:active {
-  @apply text-gray-200 border-blue-100;
-}
-
 a {
   @apply text-blue-500 dark:text-blue-200 dark:border-blue-200;
 }
@@ -109,12 +92,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-  @apply text-4xl mb-4;
-  font-weight: 825;
+  @apply text-4xl mb-4 font-extrabold;
 }
 
 h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  font-weight: 625;
+  @apply font-bold;
 }
 
 h2, .h2 {
@@ -158,14 +140,6 @@ h5, .h5, h6, .h6 {
 
 .background-hero-title-block-fit {
   @apply block w-full absolute bottom-0 px-4 pt-3 pb-6 bg-gradient-to-t from-black;
-  /*
-  background: linear-gradient(
-    transparent,
-    rgba(0, 0, 0, 0.30) 15%,
-    rgba(0, 0, 0, 0.80) 70%, 
-    rgba(0, 0, 0, 1.00)
-  );
-  */
 }
 
 .background-hero-title-text {
@@ -210,9 +184,7 @@ article p, li {
 article img.containedImage {
   min-width: 100%;
   max-width: 100%;
-  width: 100%;
-  height: auto;
-  /* latter two for no-jank in Chrome and Firefox */
+  @apply w-full h-auto;
 }
 
 @media screen and (min-width: 768px) {
