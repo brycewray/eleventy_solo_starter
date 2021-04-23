@@ -9,20 +9,26 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addShortcode('headTag', function(data) {
+
+  // restructuring for easier reading/typing
+  // ... https://wesbos.com/destructuring-objects
+  eleventyConfig.addShortcode('headTag', function({ siteparams, page, description, title }) {
+    const { siteTitle, siteDescription, siteURLforOG } = siteparams
+    const { url } = page
+
     return /*html*/ `
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=10"><!-- due to IE 11 issue with TWCSS -->
     <meta name="generator" content="Eleventy - 11ty - https://11ty.dev - v${require(`@11ty/eleventy/package.json`).version}" />        
     ${
-      (data.page.url == "/")
+      (url == "/")
       ? /*html*/ `
-      <title>${data.siteparams.siteTitle}</title> 
-      <meta property="og:title" content="${data.siteparams.siteTitle}" />
+      <title>${siteTitle}</title> 
+      <meta property="og:title" content="${siteTitle}" />
       `
       : /*html*/ `
-      <title>${data.title} | ${data.siteparams.siteTitle}</title>
-      <meta property="og:title" content="${data.title} | ${data.siteparams.siteTitle}" />
+      <title>${title} | ${siteTitle}</title>
+      <meta property="og:title" content="${title} | ${siteTitle}" />
       `
     }
 
@@ -30,19 +36,19 @@ module.exports = function(eleventyConfig) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="${data.description
-      ? `${data.description}`
-      : `${data.siteparams.siteDescription}`
+    <meta name="description" content="${description
+      ? `${description}`
+      : `${siteDescription}`
     }" />
 
-    <meta name="og:description" content="${data.description
-      ? `${data.description}`
-      : `${data.siteparams.siteDescription}`
+    <meta name="og:description" content="${description
+      ? `${description}`
+      : `${siteDescription}`
     }" />
 
-    <meta property="og:url" content="${data.page.url
-      ? `${data.page.url}`
-      : `${data.siteparams.siteURLforOG}`
+    <meta property="og:url" content="${url
+      ? `${url}`
+      : `${siteURLforOG}`
     }" />
 
     <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-16x16.png" sizes="16x16" />
