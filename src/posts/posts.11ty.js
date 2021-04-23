@@ -18,6 +18,7 @@ exports.render = function (data) {
   // restructuring for easier reading/typing
   // ... https://wesbos.com/destructuring-objects
   const { previous, next, first, last } = data.pagination.href
+  const { items } = data.pagination
   
   const pagerThing = /*html*/ `
   <p class="text-center text-sm mt-2 mb-2">
@@ -43,7 +44,8 @@ exports.render = function (data) {
       ${pagerThing}
       <hr class="mt-2 mb-6" />
       ${
-        data.pagination.items.map(post => /*html*/ `
+        items.map(
+          post => /*html*/ `
         <div>          
           <h2 class="text-2xl lg:text-3xl 2xl:text-4xl mb-1 leading-tight tracking-tight"><a href="${post.url}">${post.data.title}</a><br />
           <span class="text-lg lg:text-xl 2xl:text-2xl tracking-tight">${post.data.subtitle}</span></h2>
