@@ -4,9 +4,9 @@ exports.data = {
 }
 
 exports.render = function (data) {
-
-  // restructuring for easier reading/typing
-  // ... https://wesbos.com/destructuring-objects
+  // restructuring for easier reading/typing...
+  // https://wesbos.com/destructuring-objects
+  // https://stackoverflow.com/questions/65565806/destructure-object-properties-inside-array-prototype-map
 
   const { content, collections } = data
   const { length } = collections.post
@@ -23,22 +23,31 @@ exports.render = function (data) {
         <div class="mt-8 border-blue-700 dark:border-white mx-auto my-auto w-3/5 border-solid border-b-4 lg:hidden"></div>
         <h2 class="h1 mt-4 lg:mt-0 mb-4 lg:mb-10 text-3xl lg:text-5xl 2xl:text-7xl">Latest <a href="/posts/">posts</a></h2>
         ${
-          collections.post.slice(-3).reverse().map(post => /*html*/ `
+          collections.post.slice(-3).reverse().map(
+            ({url,
+              date,
+              data: {
+                title,
+                subtitle,
+                lastmod,
+                description
+              },
+            }) => /*html*/ `
         <div>
-          <h2 class="not-italic tracking-tight text-2xl lg:text-3xl 2xl:text-4xl"><a href="${post.url}">${post.data.title}</a></h2>
-          <p class="font-sans font-bold mt-1 mb-0 leading-5 text-xl lg:text-2xl 2xl:text-3xl">${post.data.subtitle}</p>
+          <h2 class="not-italic tracking-tight text-2xl lg:text-3xl 2xl:text-4xl"><a href="${url}">${title}</a></h2>
+          <p class="font-sans font-bold mt-1 mb-0 leading-5 text-xl lg:text-2xl 2xl:text-3xl">${subtitle}</p>
           <p class="font-sans text-sm tracking-normal mt-1 mb-0 dateInfo">
-            <time class="inline" datetime="${this.pub_lastmod(post.date)}}"><strong>${this.pub_lastmod(post.date)}</strong></time>
+            <time class="inline" datetime="${this.pub_lastmod(date)}}"><strong>${this.pub_lastmod(date)}</strong></time>
             ${
-              post.data.lastmod
+              lastmod
               ? /*html*/ `
-            <br />Last modified <time class="inline" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}</time>
+            <br />Last modified <time class="inline" datetime="${this.pub_lastmod(lastmod)}">${this.pub_lastmod(lastmod)}</time>
               `
               : ``
             }
           </p>
           <p class="font-sans text-base mt-1 mb-4 lg:mb-10">
-            ${post.data.description}
+            ${description}
           </p>
         </div>
           ` 

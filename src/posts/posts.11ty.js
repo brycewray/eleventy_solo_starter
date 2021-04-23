@@ -15,8 +15,10 @@ exports.data = {
 
 exports.render = function (data) {
 
-  // restructuring for easier reading/typing
-  // ... https://wesbos.com/destructuring-objects
+  // restructuring for easier reading/typing...
+  // https://wesbos.com/destructuring-objects
+  // https://stackoverflow.com/questions/65565806/destructure-object-properties-inside-array-prototype-map
+
   const { previous, next, first, last } = data.pagination.href
   const { items } = data.pagination
   
@@ -45,20 +47,28 @@ exports.render = function (data) {
       <hr class="mt-2 mb-6" />
       ${
         items.map(
-          post => /*html*/ `
+          ({url,
+            date,
+            data: {
+              title,
+              subtitle,
+              lastmod,
+              description
+            },
+          }) => /*html*/ `
         <div>          
-          <h2 class="text-2xl lg:text-3xl 2xl:text-4xl mb-1 leading-tight tracking-tight"><a href="${post.url}">${post.data.title}</a><br />
-          <span class="text-lg lg:text-xl 2xl:text-2xl tracking-tight">${post.data.subtitle}</span></h2>
+          <h2 class="text-2xl lg:text-3xl 2xl:text-4xl mb-1 leading-tight tracking-tight"><a href="${url}">${title}</a><br />
+          <span class="text-lg lg:text-xl 2xl:text-2xl tracking-tight">${subtitle}</span></h2>
           <p class="text-sm dateInfo mt-0">
-            <time class="inline" datetime="${this.pub_lastmod(post.date)}}"><strong>${this.pub_lastmod(post.date)}</strong></time>
+            <time class="inline" datetime="${this.pub_lastmod(date)}}"><strong>${this.pub_lastmod(date)}</strong></time>
             ${
-              post.data.lastmod
-              ? /*html*/ `<br />Last modified <time class="inline" datetime="${this.pub_lastmod(post.data.lastmod)}">${this.pub_lastmod(post.data.lastmod)}`
+              lastmod
+              ? /*html*/ `<br />Last modified <time class="inline" datetime="${this.pub_lastmod(lastmod)}">${this.pub_lastmod(lastmod)}`
               : ``
             }
           </p>
           <p class="text-sm mt-2 mb-10">
-            ${post.data.description}
+            ${description}
           </p>
         </div>
         `
