@@ -2,6 +2,7 @@ const { DateTime } = require('luxon')
 const htmlmin = require('html-minifier')
 const ofotigrid = require('./src/_includes/ofotigrid.js')
 const ErrorOverlay = require('eleventy-plugin-error-overlay')
+const path = require ('path')
 const Image = require('@11ty/eleventy-img')
 
 module.exports = function(eleventyConfig) {
@@ -106,15 +107,21 @@ module.exports = function(eleventyConfig) {
   
   // --- START, eleventy-img
   async function imageShortcode(src, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
+    console.log(`Generating image(s) from:  ${src}`)
     if(alt === undefined) {
       // We throw an error on missing alt (alt="" works okay for decorative images)
       throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`)
     }
     let metadata = await Image(src, {
-      widths: [300, 450, 600, 750, 900, 1050, 1200, 1350, 1500],
-      formats: ["webp", "jpeg"],
+      widths: [600, 900, 1500], // default is 'null' = original width, if larger than 900px
+      // formats: ["webp", "jpeg"], // default setting
       urlPath: "/images/",
       outputDir: "./_site/images/",
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src)
+        const name = path.basename(src, extension)
+        return `${name}-${width}w.${format}`
+      }
     })  
     let imageAttributes = {
       alt,
