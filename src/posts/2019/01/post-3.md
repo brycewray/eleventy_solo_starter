@@ -23,6 +23,6 @@ Text here.
 
 And here's an example of how to use the `image` shortcode (which uses the `eleventy-img` plugin):
 
-{% image "./src/images/screen-cap-from-Pippin-Williamson-s-page-builders-review_986x482.jpg", "Screen capture showing shortcodes from a WordPress page builder" %}
+{% image "./src/assets/images/screen-cap-from-Pippin-Williamson-s-page-builders-review_986x482.jpg", "Screen capture showing shortcodes from a WordPress page builder" %}
 
 Closing text. That ends Post 3!

@@ -23,10 +23,10 @@ Text here.
 
 And here are some examples of how to use the `image` shortcode (which uses the `eleventy-img` plugin):
 
-{% image "./src/images/Typography-scr-cap-2-2018-10-16.jpg", "Thin and dim text that is hard to read" %}
+{% image "./src/assets/images/Typography-scr-cap-2-2018-10-16.jpg", "Thin and dim text that is hard to read" %}
 
-{% image "./src/images/Typography-scr-cap-3-2018-10-16.jpg", "More thin and dim text that is hard to read" %}
+{% image "./src/assets/images/Typography-scr-cap-3-2018-10-16.jpg", "More thin and dim text that is hard to read" %}
 
-{% image "./src/images/Typography-scr-cap-4-2018-10-16.jpg", "Still more thin and dim text that is hard to read" %}
+{% image "./src/assets/images/Typography-scr-cap-4-2018-10-16.jpg", "Still more thin and dim text that is hard to read" %}
 
 Closing text. That ends Post 1!
