@@ -105,7 +105,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(ErrorOverlay)
   
-  // --- START, eleventy-img -- but with sync rather than async
+  // --- START, eleventy-img
   function imageShortcode(src, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
     console.log(`Generating image(s) from:  ${src}`)
     let options = {
@@ -120,7 +120,7 @@ module.exports = function(eleventyConfig) {
       }
     }
   
-    // generate images, while this is async we don’t wait
+    // generate images
     Image(src, options)
   
     let imageAttributes = {
@@ -129,7 +129,7 @@ module.exports = function(eleventyConfig) {
       loading: "lazy",
       decoding: "async",
     }
-    // get metadata even when the images are not fully generated
+    // get metadata
     metadata = Image.statsSync(src, options)
     return Image.generateHTML(metadata, imageAttributes)
   }
