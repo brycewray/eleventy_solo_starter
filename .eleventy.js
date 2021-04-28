@@ -105,16 +105,12 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(ErrorOverlay)
   
-  // --- START, eleventy-img
-  async function imageShortcode(src, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
+  // --- START, eleventy-img -- but with sync rather than async
+  function imageShortcode(src, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
     console.log(`Generating image(s) from:  ${src}`)
-    if(alt === undefined) {
-      // We throw an error on missing alt (alt="" works okay for decorative images)
-      throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`)
-    }
-    let metadata = await Image(src, {
-      widths: [600, 900, 1500], // default is 'null' (orig. width, if > highest value spec'd)
-      // formats: ["webp", "jpeg"], // default setting
+    let options = {
+      widths: [600, 900, 1500],
+      formats: ["webp", "jpeg"],
       urlPath: "/images/",
       outputDir: "./_site/images/",
       filenameFormat: function (id, src, width, format, options) {
@@ -122,13 +118,19 @@ module.exports = function(eleventyConfig) {
         const name = path.basename(src, extension)
         return `${name}-${width}w.${format}`
       }
-    })  
+    }
+  
+    // generate images, while this is async we don’t wait
+    Image(src, options)
+  
     let imageAttributes = {
       alt,
       sizes,
       loading: "lazy",
       decoding: "async",
-    }  
+    }
+    // get metadata even when the images are not fully generated
+    metadata = Image.statsSync(src, options)
     return Image.generateHTML(metadata, imageAttributes)
   }
   eleventyConfig.addShortcode("image", imageShortcode)
