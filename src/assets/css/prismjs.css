@@ -12,7 +12,8 @@ code {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply text-gray-100 bg-transparent whitespace-pre text-left break-normal leading-normal;
+  @apply bg-transparent whitespace-pre text-left break-normal leading-normal;
+  color: #a9eafa;
   word-spacing: normal;
   word-wrap: normal;
   tab-size: 4; 
@@ -41,11 +42,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: hsl(0, 0%, 70%); /* was TWCSS text-gray-400 */
+  color: hsl(150, 50%, 70%); /* was TWCSS text-gray-400 */
 }
 
 .token.punctuation {
-  @apply text-gray-300; /* alt: hsl(240, 5%, 84%) */
+  color: #f7cc8d;
 }
 
 .token.tag,
@@ -62,12 +63,15 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.function {
-  color: hsl(24, 85%, 68%);
+  color: hsl(56, 100%, 87%); /* #fffbbd for WebAIM */
+}
+
+.token.constant {
+  color: #3DBEFF; /* #3DBEFF for WebAIM */
 }
 
 .token.property,
 .token.class-name,
-.token.constant,
 .token.symbol {
   color: hsl(41, 92%, 65%);
 }
@@ -77,7 +81,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: hsl(315, 91%, 77%);
+  color: hsl(200, 87%, 64%); /* #53BEF3 for WebAIM */
 }
 
 .token.string,
@@ -85,7 +89,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  color: hsl(153, 66%, 64%);
+  color: hsl(10, 65%, 75%); /* was 7ec699 */
 }
 
 .token.operator,
