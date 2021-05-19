@@ -1,14 +1,57 @@
 const { DateTime } = require('luxon')
 const htmlmin = require('html-minifier')
-const ofotigrid = require('./src/_includes/ofotigrid.js')
+const jstheme = require('./src/_includes/jstheme.js')
 const ErrorOverlay = require('eleventy-plugin-error-overlay')
 const path = require ('path')
 const Image = require('@11ty/eleventy-img')
 
+async function imageShortcode(src, alt) {
+  let sizes = "(min-width: 1024px) 100vw, 50vw"
+  let srcPrefix = `./src/assets/images/`
+  // ... so you don't have to enter path info for each ref,
+  //     but also means you have to store them there
+  //     --- which probably is best (IMHO)
+  src = srcPrefix + src
+  console.log(`Generating image(s) from:  ${src}`)
+  if(alt === undefined) {
+    // Throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`)
+  }  
+  let metadata = await Image(src, {
+    widths: [600, 900, 1500],
+    formats: ['webp', 'jpeg'],
+    urlPath: "/images/",
+    outputDir: "./_site/images/",
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src)
+      const name = path.basename(src, extension)
+      return `${name}-${width}w.${format}`
+    }
+  })  
+  let lowsrc = metadata.jpeg[0]  
+  return `<picture>
+    ${Object.values(metadata).map(imageFormat => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`
+    }).join("\n")}
+    <img
+      src="${lowsrc.url}"
+      width="${lowsrc.width}"
+      height="${lowsrc.height}"
+      alt="${alt}"
+      loading="lazy"
+      decoding="async">
+  </picture>`
+}
+
 module.exports = function(eleventyConfig) {
+  
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
+  eleventyConfig.addLiquidShortcode("image", imageShortcode)
+  // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode)
 
   // theming -- based on Reuben Lillie's code (https://gitlab.com/reubenlillie/reubenlillie.com/)
-  ofotigrid(eleventyConfig)
+  jstheme(eleventyConfig)
 
   eleventyConfig.setQuietMode(true)
 
@@ -104,37 +147,6 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addPlugin(ErrorOverlay)
-  
-  // --- START, eleventy-img
-  function imageShortcode(src, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
-    console.log(`Generating image(s) from:  ${src}`)
-    let options = {
-      widths: [600, 900, 1500],
-      formats: ["webp", "jpeg"],
-      urlPath: "/images/",
-      outputDir: "./_site/images/",
-      filenameFormat: function (id, src, width, format, options) {
-        const extension = path.extname(src)
-        const name = path.basename(src, extension)
-        return `${name}-${width}w.${format}`
-      }
-    }
-  
-    // generate images
-    Image(src, options)
-  
-    let imageAttributes = {
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-    }
-    // get metadata
-    metadata = Image.statsSync(src, options)
-    return Image.generateHTML(metadata, imageAttributes)
-  }
-  eleventyConfig.addShortcode("image", imageShortcode)
-  // --- END, eleventy-img
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if( outputPath.endsWith(".html") ) {
@@ -177,6 +189,8 @@ module.exports = function(eleventyConfig) {
       'njk',
       '11ty.js'
     ],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
     passthroughFileCopy: true,
   }
 }
