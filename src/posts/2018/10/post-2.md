@@ -23,6 +23,6 @@ Text here.
 
 And here's an example of how to use the `image` shortcode (which uses the `eleventy-img` plugin):
 
-{% image "./src/assets/images/Early-Web-font-grfx-1-2018-10-16_1218x1296.jpg", "Image from Apple website in 1999 showing graphic elements as text" %}
+{% image "Early-Web-font-grfx-1-2018-10-16_1218x1296.jpg", "Image from Apple website in 1999 showing graphic elements as text" %}
 
 Closing text. That ends Post 2!
