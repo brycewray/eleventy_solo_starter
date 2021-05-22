@@ -19,5 +19,4 @@ This is a starter set for the [Eleventy](https://11ty.dev) [static site generato
 - Lazy-loading of some images through use of [lazyload](https://github.com/verlok/vanilla-lazyload).
 - Responsive images through the [`eleventy-img` plugin](https://www.11ty.dev/docs/plugins/image/) and an `image` shortcode.
 - [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com). As of version 2.1.0, Tailwind includes the still-in-preview **[@tailwindcss/jit](https://github.com/tailwindlabs/tailwindcss-jit) library**; read more about it in [this announcement](https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css).
-- [Alpine.js](https://github.com/alpinejs/alpine) for the nav menu.
 - Internal CSS in production mode, which is better for performance scores because it means one fewer [render-blocking resource](https://web.dev/render-blocking-resources/). In development mode, the CSS comes from a locally called `index.css` file.
