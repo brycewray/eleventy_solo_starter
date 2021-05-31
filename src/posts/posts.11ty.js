@@ -5,6 +5,7 @@ exports.data = {
   tags: ['nav'],
   navtitle: 'Posts',
   title: 'Posts',
+  eleventyExcludeFromCollections: true,
   pagination: { 
     data: 'collections.post',
     size: 5,

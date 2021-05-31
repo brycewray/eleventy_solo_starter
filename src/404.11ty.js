@@ -2,7 +2,8 @@ exports.data = {
   locale: 'en',
   title: '404 - Page not found',
   layout: 'base',
-  permalink: '404.html'
+  permalink: '404.html',
+  eleventyExcludeFromCollections: true
 }
 
 // following (as opposed to 'module.exports = `` without 'data') needed to work with above front matter
