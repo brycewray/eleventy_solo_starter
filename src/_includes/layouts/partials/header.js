@@ -5,8 +5,7 @@ module.exports = function(eleventyConfig) {
     // https://wesbos.com/destructuring-objects
     // https://stackoverflow.com/questions/65565806/destructure-object-properties-inside-array-prototype-map
   
-    const { content, collections } = data
-    const { length } = collections.post
+    const { collections } = data
 
     return /*html*/ `
     <header class="h-12 bg-black dark:bg-blue-700 w-full fixed p-0 mt-0 z-50">
