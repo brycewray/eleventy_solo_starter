@@ -1,6 +1,12 @@
 module.exports = function(eleventyConfig) {
 
-  eleventyConfig.addShortcode('siteHeader', function() {
+  eleventyConfig.addShortcode('siteHeader', function(data) {
+    // restructuring for easier reading/typing...
+    // https://wesbos.com/destructuring-objects
+    // https://stackoverflow.com/questions/65565806/destructure-object-properties-inside-array-prototype-map
+  
+    const { content, collections } = data
+    const { length } = collections.post
 
     return /*html*/ `
     <header class="h-12 bg-black dark:bg-blue-700 w-full fixed p-0 mt-0 z-50">
@@ -18,7 +24,14 @@ module.exports = function(eleventyConfig) {
             <a href="/about/" title="About">About</a>
           </li>
           <li class="nav__item">
-            <a href="/posts/" title="Posts">Posts</a>
+          ${
+            collections.post.slice(-1).reverse().map(
+              ({url}) => /*html*/ `
+            <a href="${url}" title="Latest post">Latest post</a>` 
+          ).join('')}
+          </li>
+          <li class="nav__item">
+            <a href="/posts/" title="All posts">All posts</a>
           </li>
         </ul>
       </nav>
