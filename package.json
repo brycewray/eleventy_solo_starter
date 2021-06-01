@@ -45,6 +45,6 @@
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^8.0.1",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.3"
   }
 }
