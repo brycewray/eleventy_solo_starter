@@ -53,7 +53,8 @@ module.exports = function(eleventyConfig) {
     <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-96x96.png" sizes="96x96" />
 
     ${ process.env.NODE_ENV === 'production' 
-      ? /*html*/ `<style>${internalCSS}</style>`
+      ? /*html*/ `<link rel="preload" href="/css/{{ csshash['index.css'] }}" as="style" />
+      <link rel="stylesheet" href="/css/{{ csshash['index.css'] }}" type="text/css" />`
       : /*html*/ `<link rel="stylesheet" href="/css/index.css" type="text/css"  />`
     }
 
