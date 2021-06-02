@@ -67,3 +67,10 @@ arraytest.js
 ztest.js
 
 src/_includes/css/*.*
+
+csshash
+
+csp.txt
+
+_data/csshash.json
+_data/year.json
