@@ -21,7 +21,7 @@ cssMd5Total = md5(cssContent)
 console.log(`CSS MD5 result =`, cssMd5Total)
 
 var jsonValue = `{
-  "index.css": "index-${cssMd5Total}.css"
+  "indexCSS": "index-${cssMd5Total}.css"
 }`
 fs.writeFileSync(DATAFILE, jsonValue)
 

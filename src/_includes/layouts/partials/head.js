@@ -11,7 +11,8 @@ module.exports = function(eleventyConfig) {
 
   // restructuring for easier reading/typing
   // ... https://wesbos.com/destructuring-objects
-  eleventyConfig.addShortcode('headTag', function({ siteparams, page, description, title }) {
+  eleventyConfig.addShortcode('headTag', function({ csshash, siteparams, page, description, title }) {
+    const { indexCSS } = csshash
     const { siteTitle, siteDescription, siteURLforOG } = siteparams
     const { url } = page
 
@@ -53,8 +54,8 @@ module.exports = function(eleventyConfig) {
     <link rel="icon" type="image/png" href="/images/icons/Eleventy-favicon-96x96.png" sizes="96x96" />
 
     ${ process.env.NODE_ENV === 'production' 
-      ? /*html*/ `<link rel="preload" href="/css/{{ csshash['index.css'] }}" as="style" />
-      <link rel="stylesheet" href="/css/{{ csshash['index.css'] }}" type="text/css" />`
+      ? /*html*/ `<link rel="preload" href="/css/${indexCSS}" as="style" />
+      <link rel="stylesheet" href="/css/${indexCSS}" type="text/css" />`
       : /*html*/ `<link rel="stylesheet" href="/css/index.css" type="text/css"  />`
     }
 
