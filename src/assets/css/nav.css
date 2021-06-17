@@ -77,19 +77,19 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
        max-height: 30rem;
      }
      & ~ label .nav__icon-line:first-child {
-       @apply top-0 transform -rotate-45 translate-y-2 w-6;
+       @apply top-0 -rotate-45 translate-y-2 w-6;
      }
      & ~ label .nav__icon-line:nth-child(2) {
        @apply opacity-0;
      }
      & ~ label .nav__icon-line:nth-child(3) {
-       @apply transform rotate-45 -translate-y-2 w-6;
+       @apply rotate-45 -translate-y-2 w-6;
      }
    }
 }
  
 nav {
-  @apply absolute text-left left-0 w-full transition duration-500 ease-linear transform scale-x-100 scale-y-0 origin-top;
+  @apply absolute text-left left-0 w-full transition duration-500 ease-linear scale-x-100 scale-y-0 origin-top;
   top: 100%;
   & ul {
     @apply pl-0 m-0 text-right list-none transition duration-500 ease-linear;
