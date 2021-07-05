@@ -4,9 +4,7 @@ module.exports = {
   mode: 'jit',
   purge: {
     content: [
-      './src/**/*.js',
-      './src/**/*.11ty.js',
-      './src/**/*.njk'
+      './src/**/*.{js,11ty.js,.njk}'
     ],
   },
   darkMode: 'media',
