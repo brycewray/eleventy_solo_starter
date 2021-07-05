@@ -8,11 +8,11 @@
     "hasher": "node csshash.js",
     "start": "npm-run-all clean hasher --parallel dev:*",
     "dev:postcss": "postcss src/assets/css/index.css -o _site/css/index.css --config ./postcss.config.js -w",
-    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --watch --quiet --config=eleventy.config.js",
+    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --watch --quiet",
     "dev:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode",
     "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
     "prod:postcss": "postcss src/assets/css/index.css -o _site/css/$(cat csshash) --config ./postcss.config.js",
-    "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site --config=eleventy.config.js"
+    "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site"
   },
   "keywords": [],
   "author": "",
