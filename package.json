@@ -29,8 +29,8 @@
     "glob": "^7.1.7",
     "glob-all": "^3.2.1",
     "html-minifier": "^4.0.0",
-    "luxon": "^2.0.1",
-    "markdown-it": "^12.1.0",
+    "luxon": "^2.0.2",
+    "markdown-it": "^12.2.0",
     "markdown-it-bracketed-spans": "^1.0.1",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-link-attributes": "^3.0.0",
@@ -43,6 +43,6 @@
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^8.0.1",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^2.2.5"
+    "tailwindcss": "^2.2.7"
   }
 }
