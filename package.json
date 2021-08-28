@@ -24,7 +24,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^0.10.0",
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.3",
     "eleventy-plugin-error-overlay": "^0.1.2",
     "glob": "^7.1.7",
     "glob-all": "^3.2.1",
@@ -34,7 +34,7 @@
     "markdown-it-bracketed-spans": "^1.0.1",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-link-attributes": "^3.0.0",
-    "markdown-it-prism": "^2.1.8",
+    "markdown-it-prism": "^2.2.0",
     "md5": "^2.3.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
@@ -43,6 +43,6 @@
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^8.0.1",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "^2.2.8"
   }
 }
