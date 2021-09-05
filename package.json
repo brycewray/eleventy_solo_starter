@@ -24,7 +24,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^0.10.0",
-    "autoprefixer": "^10.3.3",
+    "autoprefixer": "^10.3.4",
     "eleventy-plugin-error-overlay": "^0.1.2",
     "glob": "^7.1.7",
     "glob-all": "^3.2.1",
@@ -43,6 +43,6 @@
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^8.0.1",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^2.2.8"
+    "tailwindcss": "^2.2.9"
   }
 }
